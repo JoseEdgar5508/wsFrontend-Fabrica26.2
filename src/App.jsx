@@ -20,6 +20,18 @@ function App() {
   return (
     <>
       <h1>Heróis</h1>
+
+      <ul>
+        {arrPosts.map((hero) => (
+          <li key={hero.key}>
+            <img src={hero.portrait} alt={hero.name} />
+            <h3 className="text-red-500 text-2xl font-bold">
+              {hero.name}
+            </h3>
+            <p>{hero.role}</p>
+          </li>
+        ))}
+      </ul>
     </>
   )
 }
