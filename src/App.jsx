@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import axios from "axios"
 import HeroCard from './components/HeroCard'
+import SearchInput from './components/SearchInput'
 
 
 function App() {
@@ -44,12 +45,7 @@ function App() {
 
   return (
     <>
-      <input
-        type="text"
-        placeholder="Buscar herói..."
-        value={busca}
-        onChange={(e) => setBusca(e.target.value)}
-      />
+      <SearchInput busca={busca} setBusca={setBusca} />
       <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
         {heroisDaPagina.map((hero) => (
           <HeroCard key={hero.key} hero={hero} />
