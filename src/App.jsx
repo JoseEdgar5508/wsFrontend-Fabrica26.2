@@ -15,6 +15,7 @@ function App() {
   const [paginaAtual, setPaginaAtual] = useState(1)
 
 
+
   useEffect(() => {
     const requisicaoAPI = async () => {
       const respostaAPI = await axios.get(
@@ -45,7 +46,7 @@ function App() {
   const totalPaginas = Math.ceil(heroisFiltrados.length / itensPorPagina)
 
   return (
-    <>
+    <div className="min-h-screen bg-blue-800 text-white px-4 py-8">
       <SearchInput busca={busca} setBusca={setBusca} />
       <HeroList herois={heroisDaPagina} />
       <Pagination
@@ -53,7 +54,22 @@ function App() {
         totalPaginas={totalPaginas}
         setPaginaAtual={setPaginaAtual}
       />
-    </>
+
+      <footer className="mt-12 text-center text-slate-300 text-sm border-t border-slate-600 pt-6">
+        <p>Projeto Final — wsFrontend-Fabrica26.2</p>
+        <p>
+          Dados fornecidos pela{' '}
+
+          <a href="https://overfast-api.tekrop.fr/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline hover:text-white"
+          >
+            OverFast API
+          </a>
+        </p>
+      </footer>
+    </div>
   )
 
 }
