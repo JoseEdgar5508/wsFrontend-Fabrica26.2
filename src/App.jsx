@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 import axios from "axios"
+import HeroCard from './components/HeroCard'
+
 
 function App() {
 
@@ -48,13 +50,9 @@ function App() {
         value={busca}
         onChange={(e) => setBusca(e.target.value)}
       />
-      <ul>
+      <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
         {heroisDaPagina.map((hero) => (
-          <li key={hero.key}>
-            <img src={hero.portrait} alt={hero.name} />
-            <h3 className="text-red-500 text-2xl font-bold">{hero.name}</h3>
-            <p>{hero.role}</p>
-          </li>
+          <HeroCard key={hero.key} hero={hero} />
         ))}
       </ul>
       <div>
