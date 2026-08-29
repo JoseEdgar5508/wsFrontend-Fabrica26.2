@@ -3,6 +3,7 @@ import './App.css'
 import axios from "axios"
 import SearchInput from './components/SearchInput'
 import HeroList from './components/HeroList'
+import Pagination from './components/Pagination'
 
 
 function App() {
@@ -47,23 +48,11 @@ function App() {
     <>
       <SearchInput busca={busca} setBusca={setBusca} />
       <HeroList herois={heroisDaPagina} />
-      <div>
-        <button
-          onClick={() => setPaginaAtual(paginaAtual - 1)}
-          disabled={paginaAtual === 1}
-        >
-          Anterior
-        </button>
-
-        <span> Página {paginaAtual} de {totalPaginas} </span>
-
-        <button
-          onClick={() => setPaginaAtual(paginaAtual + 1)}
-          disabled={paginaAtual === totalPaginas}
-        >
-          Próxima
-        </button>
-      </div>
+      <Pagination
+        paginaAtual={paginaAtual}
+        totalPaginas={totalPaginas}
+        setPaginaAtual={setPaginaAtual}
+      />
     </>
   )
 

@@ -11,5 +11,3 @@ function HeroCard({ hero }) {
 }
 
 export default HeroCard
-
-// Vai por os em uma ordem mais organizada.
