@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 import axios from "axios"
-import HeroCard from './components/HeroCard'
 import SearchInput from './components/SearchInput'
+import HeroList from './components/HeroList'
 
 
 function App() {
@@ -46,11 +46,7 @@ function App() {
   return (
     <>
       <SearchInput busca={busca} setBusca={setBusca} />
-      <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-        {heroisDaPagina.map((hero) => (
-          <HeroCard key={hero.key} hero={hero} />
-        ))}
-      </ul>
+      <HeroList herois={heroisDaPagina} />
       <div>
         <button
           onClick={() => setPaginaAtual(paginaAtual - 1)}

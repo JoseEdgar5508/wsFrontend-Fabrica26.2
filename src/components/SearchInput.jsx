@@ -11,3 +11,5 @@ function SearchInput({ busca, setBusca }) {
 }
 
 export default SearchInput
+
+//Adiciona e estiliza o campo de pesquisa
