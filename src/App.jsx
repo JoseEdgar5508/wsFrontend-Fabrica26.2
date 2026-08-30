@@ -4,6 +4,7 @@ import axios from "axios"
 import SearchInput from './components/SearchInput'
 import HeroList from './components/HeroList'
 import Pagination from './components/Pagination'
+import HeroSection from './components/HeroSection'
 
 
 function App() {
@@ -47,6 +48,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-blue-800 text-white px-4 py-8">
+      <HeroSection />
       <SearchInput busca={busca} setBusca={setBusca} />
       <HeroList herois={heroisDaPagina} />
       <Pagination
