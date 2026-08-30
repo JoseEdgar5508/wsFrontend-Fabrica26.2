@@ -73,4 +73,4 @@ Projeto desenvolvido como parte do nível **Intermediário** da Fábrica de Soft
 
 ## Autor
 
-José Edgar Ferriera de Araujo Neto.
+José Edgar Ferreira de Araujo Neto.
